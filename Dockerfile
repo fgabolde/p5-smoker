@@ -11,7 +11,7 @@ RUN echo ". /root/perl5/perlbrew/etc/bashrc" >> /var/jenkins_home/.bash_profile 
 
 # pre-downloaded tarballs
 COPY dists /root/perl5/perlbrew/dists
-COPY expected-perl-dists.txt /tmp
+COPY expected-perl-dists.txt /tmp/
 
 RUN ["/bin/bash", "-c", "perlbrew install-multiple -v --notest --both thread perl-5.23.7 perl-5.22.1 perl-5.20.3 perl-5.18.4 perl-5.16.3 perl-5.14.4 perl-5.12.5 perl-5.10.1 perl-5.8.9"]
 
