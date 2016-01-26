@@ -19,5 +19,8 @@ RUN ["/bin/bash", "-c", "perlbrew install-multiple --notest perl-5.23.7 perl-5.2
 # perls did not install properly
 RUN ["/bin/bash", "-c", "perlbrew list | sed -e 's/^..//' | sort | diff /tmp/expected-perl-dists.txt -"]
 
+# our customized version
+COPY ./run.sh /run.sh
+
 # as per jenkins-swarm
 ENTRYPOINT ["/run.sh"]
