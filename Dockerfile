@@ -17,7 +17,7 @@ RUN ["/bin/bash", "-c", "perlbrew install-multiple --notest perl-5.23.7 perl-5.2
 
 # perlbrew (at least 0.66 from jessie) returns success even if some
 # perls did not install properly
-RUN ["/bin/bash", "-c", "perlbrew list | sort | diff /tmp/expected-perl-dists.txt -"]
+RUN ["/bin/bash", "-c", "perlbrew list | sed -e 's/^..//' | sort | diff /tmp/expected-perl-dists.txt -"]
 
 # as per jenkins-swarm
 ENTRYPOINT ["/run.sh"]
