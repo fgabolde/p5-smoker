@@ -3,7 +3,7 @@ MAINTAINER Fabrice Gabolde <fabrice.gabolde@gmail.com>
 
 USER root
 
-RUN apt-get update && apt-get install -y --no-install-recommends bzip2 patch perlbrew cpanm
+RUN apt-get update && apt-get install -y --no-install-recommends bzip2 patch perlbrew cpanminus
 
 RUN perlbrew init
 RUN echo ". /root/perl5/perlbrew/etc/bashrc" >> /root/.bash_profile
