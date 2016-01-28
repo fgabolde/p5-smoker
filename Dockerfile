@@ -5,6 +5,8 @@ USER root
 
 RUN apt-get update && apt-get install -y --no-install-recommends bzip2 patch perlbrew cpanminus
 
+RUN perlbrew install-cpanm
+
 RUN perlbrew init
 RUN echo ". /root/perl5/perlbrew/etc/bashrc" >> /root/.bash_profile
 RUN echo ". /root/perl5/perlbrew/etc/bashrc" >> /var/jenkins_home/.bash_profile && chown jenkins: /var/jenkins_home/.bash_profile
